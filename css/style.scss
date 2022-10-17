@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color:steelblue;
+}
+
+// *************** header **************
+header {
+    height: 80vh;
+    position: relative;
+    background: url(../img/banner-img.jpg) no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($color: #000000, $alpha: 0.5);
+        z-index: -1;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+        background: rgba(200, 217, 217, 0.9);
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .logo {
+        width: 200px;
+    }
+
+    .logo img {
+        width: 100%;
+        height: 100%;
+    }
+
+    ul {
+        display: flex;
+    }
+
+    ul i {
+        margin: 0 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    li {
+        margin: 0 20px;
+        list-style: none;
+    }
+
+    .banner {
+        text-align: center;
+        color: #fff;
+    }
+
+    .banner h4 {
+        margin-bottom: 20px;
+    }
+
+    .header-btn input {
+        border: none;
+        border-radius: 3px;
+        padding: 5px;
+        width: 100px;
+        height: 40px;
+    }
+}
+
+// filter vehicles section
+.filter-links {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    ul {
+        display: flex;
+        font-size: 14px;
+    }
+
+    ul i {
+        margin: 0 4px;
+        cursor: pointer;
+        font-size: 12px;
+    }
+
+    li {
+        margin: 0 20px;
+        list-style: none;
+    }
+}
+
+// ********** main section ***********
+.main-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {
+        width: 250px;
+        height: 200px;
+        margin: 20px;
+        box-shadow: 1px 1px 5px lightgrey;
+        border-radius: 5px;
+        position: relative;
+
+        .card-img {
+            width: 100%;
+            height: 70%;
+            border-radius: inherit;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: inherit;
+            }
+        }
+
+
+        .card-details {
+            margin: 5px;
+            font-size: 0.9em;
+        }
+
+        .expanded {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: inherit;
+            width: 80%;
+            height: 500px;
+            box-shadow: 1px 1px 1px lightgrey;
+            z-index: 2;
+            overflow: hidden;
+            display: flex;
+            transition: 0.5s;
+            visibility: hidden;
+
+            .fa-x {
+                position: absolute;
+                right: 5%;
+                top: 5%;
+                font-size: 20px;
+                cursor: pointer;
+                color: grey;
+            }
+
+            .expanded-img , .expanded-details {
+                background-color: #fff;
+                height: 100%;
+                width: 50%;
+            }
+
+            .expanded-img {
+                background-color: #333;
+            }
+
+            .expanded-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .expanded-details {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                height: 100%;
+                text-align: center;
+
+                .ratings {
+                    display: flex;
+                    justify-content: center;
+
+                    section {
+                        margin: 0 20px;
+                        color: grey;
+                    }
+                }
+            }
+        }
+
+        // add class to see expanded card
+        .view-expanded {
+            visibility: visible;
+        }
+    }
+}
+
+footer {
+    background: #222;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
